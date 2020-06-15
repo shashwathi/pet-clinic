@@ -1,0 +1,13 @@
+---
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: TriggerBinding
+metadata:
+  name: github-binding
+spec:
+  params:
+  - name: gitrepositoryurl
+    value: $(body.repository.url)
+  - name: gitrevision
+    value: $(body.repository.revision)
+  - name: registryurl
+    value: $(body.registry.url)

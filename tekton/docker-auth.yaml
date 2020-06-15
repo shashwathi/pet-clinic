@@ -1,0 +1,18 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: basic-user-pass
+  annotations:
+    tekton.dev/docker-0: https://index.docker.io/v1/
+type: kubernetes.io/basic-auth
+stringData:
+  username: USERNAME # update this field to use docker username
+  password: PASSWORD # update this field to use docker password
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: docker-creds
+secrets:
+  - name: basic-user-pass
