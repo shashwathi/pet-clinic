@@ -6,8 +6,12 @@ metadata:
 spec:
   params:
     - name: gitrevision
+      default: main
+      description: The git revsion to checkout and build, a branch or sha, default to main
     - name: gitrepositoryurl
+      description: The git repository url
     - name: registryurl
+      description: The registry url built images target
   resourcetemplates:
     - apiVersion: tekton.dev/v1alpha1
       kind: TaskRun
