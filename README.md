@@ -5,7 +5,7 @@ assuming a port forward of:
 ```
 kubectl port-forward $(kubectl get pod --selector=eventlistener=github-listener-interceptor -oname) 8080
 ```
-invoke with:
+invoke with following command:
 
 ```
 curl -X POST \
